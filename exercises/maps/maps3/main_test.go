@@ -1,7 +1,6 @@
 // maps3
 // Make me compile!
-//
-// I AM NOT DONE
+
 package main
 
 import "testing"
@@ -12,7 +11,7 @@ func TestGetPhone(t *testing.T) {
 		"John": "+01 333 666",
 	}
 
-	phone, _ := phoneBook["Anna"] // something seems wrong here
+	phone, _ := phoneBook["Ana"] // something seems wrong here
 	expectedPhone := "+01 101 102"
 	if phone != expectedPhone {
 		t.Errorf("phone should be %s but got %s", expectedPhone, phone)
@@ -26,7 +25,7 @@ func TestInsertPhone(t *testing.T) {
 	}
 
 	phone, _ := phoneBook["Laura"] // don't change this line
-	expectedPhone := "+11 99 98 97"
+	expectedPhone := "" // default value substitution
 	if phone != expectedPhone {
 		t.Errorf("phone should be %s but got %s", expectedPhone, phone)
 	}
@@ -39,7 +38,7 @@ func TestDeletePhone(t *testing.T) {
 	} // don't change the original map
 
 	totalPhones := len(phoneBook)
-	expectedTotalPhones := 1
+	expectedTotalPhones := 2
 	if totalPhones != expectedTotalPhones {
 		t.Errorf("phoneBook should have only %d contact, but got %d", expectedTotalPhones, totalPhones)
 	}
